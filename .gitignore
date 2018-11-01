@@ -19,7 +19,7 @@
 [Xx]86/
 [Bb]uild/
 bld/
-[Bb]in/
+#[Bb]in/
 [Oo]bj/
 
 # Visual Studio 2015 cache/options directory
@@ -240,3 +240,13 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/bin/GCC-ofxKinect2.lib
+/bin/GCC-ofxKinect2.ipdb
+/bin/GCC-ofxKinect2.iobj
+/bin/GCC-ofxKinect2.exp
+/bin/GCC-ofxKinect2.exe
+/bin/data/projMask.jpg
+/bin/data/Patterns/proj
+/bin/data/Patterns/cam1
+/bin/data/Patterns
+*.yml

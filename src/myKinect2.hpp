@@ -22,7 +22,7 @@ public:
 			depthRaws[i] = getDepthShortPixelsUnflipped()[(int)(depths[i].Y + 0.5)*DEPTH_WIDTH + (int)(depths[i].X + 0.5)];
 		}
 		CameraSpacePoint* cameras = new CameraSpacePoint[o.size()];
-		this->getMapper()->MapDepthPointsToCameraSpace(o.size(), depths, o.size(), depthRaws, o.size(), cameras);
+		getMapper()->MapDepthPointsToCameraSpace(o.size(), depths, o.size(), depthRaws, o.size(), cameras);
 
 		vector<ofPoint> out(o.size());
 		for (size_t i = 0; i < o.size(); i++) {
@@ -47,10 +47,11 @@ public:
 		int DEPTH_HEIGHT = getDepthStream()->getHeight();
 
 		CameraSpacePoint* cameras = new CameraSpacePoint[COLOR_WIDTH*COLOR_HEIGHT];
-		this->getMapper()->MapColorFrameToCameraSpace(
+		getMapper()->MapColorFrameToCameraSpace(
 			DEPTH_WIDTH * DEPTH_HEIGHT,
 			getDepthShortPixelsUnflipped().getData(),
-			COLOR_WIDTH * DEPTH_HEIGHT, cameras);
+			COLOR_WIDTH * COLOR_HEIGHT, 
+			cameras);
 		
 		vector<ofPoint> out(o.size());
 		for (size_t i = 0; i < o.size(); i++) {
