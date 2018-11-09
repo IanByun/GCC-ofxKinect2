@@ -40,6 +40,42 @@
     <ClCompile Include="src\GrayCodeCalibrationWithKinect2.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\BilateralFilter\jointBilateralFilter.cpp">
+      <Filter>src\BilateralFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BilateralFilter\jointNearest.cpp">
+      <Filter>src\BilateralFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BilateralFilter\minmaxFilter.cpp">
+      <Filter>src\BilateralFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BilateralFilter\split.cpp">
+      <Filter>src\BilateralFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BilateralFilter\trilateralFilter.cpp">
+      <Filter>src\BilateralFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BilateralFilter\util.cpp">
+      <Filter>src\BilateralFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BilateralFilter\viewSynthesis.cpp">
+      <Filter>src\BilateralFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BilateralFilter\alphaBlend.cpp">
+      <Filter>src\BilateralFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BilateralFilter\bilateralFilter.cpp">
+      <Filter>src\BilateralFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BilateralFilter\depthEval.cpp">
+      <Filter>src\BilateralFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BilateralFilter\depthFilter.cpp">
+      <Filter>src\BilateralFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BilateralFilter\guidedFilter.cpp">
+      <Filter>src\BilateralFilter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -149,6 +185,9 @@
     </Filter>
     <Filter Include="src\structured_light">
       <UniqueIdentifier>{bdeb6111-8216-4dfd-9f74-3d6f0b027561}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\BilateralFilter">
+      <UniqueIdentifier>{356a5ad4-a45a-4f7d-8871-dba73c47ed3c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -742,6 +781,18 @@
     </ClInclude>
     <ClInclude Include="src\myKinect2.hpp">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BilateralFilter\util.h">
+      <Filter>src\BilateralFilter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BilateralFilter\viewSynthesis.h">
+      <Filter>src\BilateralFilter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BilateralFilter\filter.h">
+      <Filter>src\BilateralFilter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BilateralFilter\filterengine.hpp">
+      <Filter>src\BilateralFilter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -173,6 +173,18 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\BilateralFilter\alphaBlend.cpp" />
+    <ClCompile Include="src\BilateralFilter\bilateralFilter.cpp" />
+    <ClCompile Include="src\BilateralFilter\depthEval.cpp" />
+    <ClCompile Include="src\BilateralFilter\depthFilter.cpp" />
+    <ClCompile Include="src\BilateralFilter\guidedFilter.cpp" />
+    <ClCompile Include="src\BilateralFilter\jointBilateralFilter.cpp" />
+    <ClCompile Include="src\BilateralFilter\jointNearest.cpp" />
+    <ClCompile Include="src\BilateralFilter\minmaxFilter.cpp" />
+    <ClCompile Include="src\BilateralFilter\split.cpp" />
+    <ClCompile Include="src\BilateralFilter\trilateralFilter.cpp" />
+    <ClCompile Include="src\BilateralFilter\util.cpp" />
+    <ClCompile Include="src\BilateralFilter\viewSynthesis.cpp" />
     <ClCompile Include="src\GrayCodeCalibrationWithKinect2.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
@@ -188,6 +200,10 @@
     <ClCompile Include="src\structured_light\graycodepattern.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\BilateralFilter\filter.h" />
+    <ClInclude Include="src\BilateralFilter\filterengine.hpp" />
+    <ClInclude Include="src\BilateralFilter\util.h" />
+    <ClInclude Include="src\BilateralFilter\viewSynthesis.h" />
     <ClInclude Include="src\GrayCodeCalibrationWithKinect2.hpp" />
     <ClInclude Include="src\myKinect2.hpp" />
     <ClInclude Include="src\ofApp.h" />

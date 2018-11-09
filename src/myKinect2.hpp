@@ -3,6 +3,11 @@
 #include <opencv.hpp>
 #include <ofxKinect2.h>
 
+#define BILATERAL_FILTER_DEPTH
+#ifdef BILATERAL_FILTER_DEPTH
+#include "BilateralFilter/filter.h"
+#endif
+
 class myKinect2 : public ofxKinect2::Device {
 public:
 	inline ofPoint depthToCamera(const ofPoint& o) {
@@ -75,10 +80,30 @@ public:
 		return getDepthStream()->getPixels();
 	} // 8비트 그레이
 	inline ofShortPixels& getDepthShortPixels() {
+#ifdef BILATERAL_FILTER_DEPTH
+		static ofShortPixels refined_shor;
+		refined_shor = getDepthStream()->getShortPixelsUnflipped(); //deep copy
+
+		Mat refinedDepth(getDepthWidth(), getDepthHeight(), CV_16UC1, refined_shor.getData()); //shallow copy
+		fillOcclusionDepth(refinedDepth, 0); //filter
+
+		return refined_shor; //return reference
+#else
 		return getDepthStream()->getShortPixelsRef();
+#endif
 	} // 16비트 그레이
 	inline ofShortPixels& getDepthShortPixelsUnflipped() {
+#ifdef BILATERAL_FILTER_DEPTH
+		static ofShortPixels refined_short_unflipped;
+		refined_short_unflipped = getDepthStream()->getShortPixelsUnflipped(); //deep copy
+
+		Mat refinedDepth(getDepthWidth(), getDepthHeight(), CV_16UC1, refined_short_unflipped.getData()); //shallow copy
+		fillOcclusionDepth(refinedDepth, 0); //filter
+
+		return refined_short_unflipped; //return reference
+#else
 		return getDepthStream()->getShortPixelsUnflipped();
+#endif
 	}
 
 	inline cv::Mat getColorMat() {

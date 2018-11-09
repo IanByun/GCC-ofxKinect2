@@ -40,6 +40,11 @@ void ofApp::update() {
 void ofApp::draw() {
 	ofBackground(ofColor::black);
 
+	ofPoint mid = ((myKinect2*)kinectv2.get())->colorToCamera({ 
+		kinectv2->getColorStream()->getWidth() / 4.f,
+		kinectv2->getColorStream()->getHeight() / 4.f });
+	cout << mid << endl;
+
 	kinectv2->getColorStream()->draw(
 		0, 0,
 		kinectv2->getColorStream()->getWidth() / 4, 
