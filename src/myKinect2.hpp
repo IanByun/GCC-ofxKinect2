@@ -81,13 +81,13 @@ public:
 	} // 8비트 그레이
 	inline ofShortPixels& getDepthShortPixels() {
 #ifdef BILATERAL_FILTER_DEPTH
-		static ofShortPixels refined_shor;
-		refined_shor = getDepthStream()->getShortPixelsUnflipped(); //deep copy
+		static ofShortPixels refined_short;
+		refined_short = getDepthStream()->getShortPixelsRef(); //deep copy
 
-		Mat refinedDepth(getDepthWidth(), getDepthHeight(), CV_16UC1, refined_shor.getData()); //shallow copy
+		Mat refinedDepth(getDepthWidth(), getDepthHeight(), CV_16UC1, refined_short.getData()); //shallow copy
 		fillOcclusionDepth(refinedDepth, 0); //filter
 
-		return refined_shor; //return reference
+		return refined_short; //return reference
 #else
 		return getDepthStream()->getShortPixelsRef();
 #endif
